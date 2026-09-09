@@ -7,7 +7,7 @@ on:
       timezone: "Asia/Kolkata"
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: daily-engineering-fresher-alert
@@ -22,7 +22,15 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v7
         with:
-          fetch-depth: 0
+          fetch-depth: 1
+
+      - name: Restore job alert state
+        uses: actions/cache@v5
+        with:
+          path: state/job_state.json
+          key: job-alert-state-${{ github.run_id }}
+          restore-keys: |
+            job-alert-state-
 
       - name: Set up Python
         uses: actions/setup-python@v7
@@ -38,15 +46,3 @@ jobs:
           MAIL_FROM: ${{ secrets.MAIL_FROM }}
           MAIL_TO: placement@ksrct.ac.in
         run: python job_alert.py
-
-      - name: Commit updated state
-        run: |
-          if git diff --quiet -- state/job_state.json; then
-            echo "No state changes to commit."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add state/job_state.json
-          git commit -m "chore: update job alert state"
-          git push
