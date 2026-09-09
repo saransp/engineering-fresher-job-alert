@@ -1,0 +1,104 @@
+{
+  "timezone": "Asia/Kolkata",
+  "locations": [
+    "Coimbatore",
+    "Bengaluru",
+    "Chennai",
+    "Hyderabad",
+    "Kochi",
+    "Thiruvananthapuram"
+  ],
+  "branch_keywords": {
+    "Computer Science / IT": [
+      "computer science",
+      "cse",
+      "information technology",
+      "it",
+      "software"
+    ],
+    "Electronics / ECE / EEE": [
+      "electronics",
+      "ece",
+      "eee",
+      "electrical",
+      "embedded",
+      "vlsi"
+    ],
+    "Mechanical / Mechatronics": [
+      "mechanical",
+      "mechatronics",
+      "automobile",
+      "production",
+      "manufacturing"
+    ],
+    "Civil": [
+      "civil",
+      "construction",
+      "structural"
+    ],
+    "Chemical": [
+      "chemical",
+      "petrochemical"
+    ],
+    "Industrial / Production": [
+      "industrial engineering",
+      "production engineering"
+    ],
+    "Any B.E./B.Tech": [
+      "b.e",
+      "be ",
+      "b.tech",
+      "btech",
+      "engineering graduate",
+      "engineering degree"
+    ]
+  },
+  "positive_terms": [
+    "fresher",
+    "freshers",
+    "graduate engineer trainee",
+    "graduate trainee",
+    "trainee engineer",
+    "entry level",
+    "entry-level",
+    "0-1 year",
+    "0 to 1 year",
+    "0-2 years",
+    "0 to 2 years",
+    "campus",
+    "2026 batch",
+    "2025 batch",
+    "2026 graduate"
+  ],
+  "negative_terms": [
+    "senior engineer",
+    "lead engineer",
+    "principal engineer",
+    "manager",
+    "architect",
+    "director",
+    "head of",
+    "5+ years",
+    "6+ years",
+    "7+ years",
+    "8+ years",
+    "10+ years",
+    "3-5 years",
+    "4-6 years",
+    "5-7 years",
+    "3+ years",
+    "4+ years"
+  ],
+  "search_templates": [
+    "\"B.E\" OR \"B.Tech\" fresher engineer \"{location}\" when:2d",
+    "\"graduate engineer trainee\" \"{location}\" when:2d",
+    "\"engineering fresher\" \"{location}\" when:2d",
+    "\"entry level engineer\" \"{location}\" when:2d",
+    "\"trainee engineer\" \"{location}\" when:2d"
+  ],
+  "max_items_per_query": 12,
+  "max_total_items": 60,
+  "request_timeout_seconds": 18,
+  "max_page_chars": 160000,
+  "days_to_keep_state": 14
+}
